@@ -13,7 +13,6 @@ const createOscillator = (notes = []) => {
 
   const oscillator = audioContext.createOscillator();
   const gain = audioContext.createGain();
-  const delay = audioContext.createDelay();
 
   // config
 
@@ -23,9 +22,7 @@ const createOscillator = (notes = []) => {
 
   // connect
   oscillator.connect(gain);
-  gain.connect(delay);
   gain.connect(audioContext.destination);
-  delay.connect(audioContext.destination);
 
   oscillator.start(0);
 
