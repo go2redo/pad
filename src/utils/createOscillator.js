@@ -9,18 +9,13 @@ try {
 const createOscillator = (notes = []) => {
   if (notes.length <= 0) return;
 
-  // init
-
   const oscillator = audioContext.createOscillator();
   const gain = audioContext.createGain();
-
-  // config
 
   oscillator.type = 'triangle';
   oscillator.frequency.value = notes[0];
   gain.gain.value = 1;
 
-  // connect
   oscillator.connect(gain);
   gain.connect(audioContext.destination);
 
