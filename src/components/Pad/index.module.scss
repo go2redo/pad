@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+
+.SequencerPad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .5em;
+  padding: .5em;
+  border-radius: .5em;
+  border: 1px solid $secondary-dark;
+  background: $secondary;
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  opacity: .25;
+
+  &.isActive {
+    background: $secondary-light;
+  }
+
+  &.isSelected {
+    background: $primary-light;
+  }
+}

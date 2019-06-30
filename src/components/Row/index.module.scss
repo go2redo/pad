@@ -1,0 +1,6 @@
+@import '../../styles/variables.scss';
+
+.SequencerRow {
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+}

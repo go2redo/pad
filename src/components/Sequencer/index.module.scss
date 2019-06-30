@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.SequencerContainer {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  height: 80vh;
+  width: 80vw;
+  margin: 10vh 10vw;
+  padding: 1em;
+  background: $secondary;
+  box-shadow: 0px 1px 1px 1px $secondary-dark;
+  border-radius: .5em;
+  border: 1px solid $secondary-dark;
+}
