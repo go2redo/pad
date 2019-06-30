@@ -19,7 +19,7 @@ const createOscillator = (notes = []) => {
 
   oscillator.type = 'triangle';
   oscillator.frequency.value = notes[0];
-  gain.gain.value = 0.05;
+  gain.gain.value = 1;
 
   // connect
   oscillator.connect(gain);
