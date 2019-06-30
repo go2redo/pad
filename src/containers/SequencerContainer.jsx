@@ -29,7 +29,7 @@ const SequencerContainer = ({
   }, (60 * 1000) / 100 / 2);
 
   useEffect(() => {
-    alert('Press on any key');
+    alert('Press any key');
   }, []);
 
   const handleClick = (rowIndex, padIndex) =>

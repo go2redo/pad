@@ -1,13 +1,19 @@
-const ctx = new (window.AudioContext || window.webkitAudioContext)();
+let audioContext;
+
+try {
+  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+} catch (error) {
+  window.alert(`Sorry, but your browser doesn't support the Web Audio API!`);
+}
 
 const createOscillator = (notes = []) => {
   if (notes.length <= 0) return;
 
   // init
 
-  const oscillator = ctx.createOscillator();
-  const gain = ctx.createGain();
-  const delay = ctx.createDelay();
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+  const delay = audioContext.createDelay();
 
   // config
 
@@ -18,12 +24,15 @@ const createOscillator = (notes = []) => {
   // connect
   oscillator.connect(gain);
   gain.connect(delay);
-  gain.connect(ctx.destination);
-  delay.connect(ctx.destination);
+  gain.connect(audioContext.destination);
+  delay.connect(audioContext.destination);
 
   oscillator.start(0);
 
-  setTimeout(() => gain.gain.setTargetAtTime(0, ctx.currentTime, 0.015), 100);
+  setTimeout(
+    () => gain.gain.setTargetAtTime(0, audioContext.currentTime, 0.015),
+    100,
+  );
 };
 
 export default createOscillator;

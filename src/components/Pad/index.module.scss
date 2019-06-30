@@ -14,6 +14,11 @@
   transition: all .3s ease-in-out;
   opacity: .25;
 
+  @media (max-width: 768px) {
+    margin: .25em;
+    padding: .25em;
+  }
+
   &.isActive {
     background: $secondary-light;
   }
